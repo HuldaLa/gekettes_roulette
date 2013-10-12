@@ -1,4 +1,10 @@
 GeekettesRoulette::Application.routes.draw do
+  resources :geekettes
+
+  get 'sign_up'   => 'oauth#sign_up'
+  get 'callback'  => "oauth#callback"
+  get 'import'    => "geekettes#import"
+  get 'contact_request/:user_id' => "oauth#contact_request"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -48,7 +54,7 @@ GeekettesRoulette::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => 'welcome#index'
+  root :to => 'geekettes#start'
 
   # See how all your routes lay out with "rake routes"
 

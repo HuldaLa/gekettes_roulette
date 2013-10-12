@@ -1,0 +1,11 @@
+<%= simple_form_for @geekette do |f| %>
+  <%= f.input :last_name %>
+  <%= f.input :first_name %>
+
+  <%= f.input :birth_date, as: :date %>
+  <%= f.input :email %>
+         
+  <%= f.input :buisness_city %>
+
+  <%= f.button :submit %>
+<% end %>

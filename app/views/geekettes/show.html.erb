@@ -1,0 +1,6 @@
+<h1><%= "#{@geekette.last_name}" %></h1>
+
+<%= image_tag JSON(@geekette.photo_urls)['large'] %>
+
+<% ext_id = JSON(@geekette.external_ids)['xing'] %>
+<%= link_to content_tag(:i, 'Kontaktanfrage stellen', class: "icon-xing-sign"), "/contact_request/#{ext_id}" %>
